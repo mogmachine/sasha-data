@@ -33,6 +33,12 @@ def collect_usage_history():
     existing = load_json(DATA_DIR / "usage-history.json")
     daily = existing.get("daily", {})
     
+    # Ensure all existing entries have calls field (backward compatibility)
+    for date in daily:
+        for model in daily[date]:
+            if "calls" not in daily[date][model]:
+                daily[date][model]["calls"] = 0
+    
     # Scan all session JSONL files
     pattern = "/home/ubuntu/.openclaw/agents/*/sessions/*.jsonl"
     for jsonl_path in glob.glob(pattern):
@@ -67,7 +73,8 @@ def collect_usage_history():
                                 "output": 0,
                                 "cacheRead": 0,
                                 "cacheWrite": 0,
-                                "cost": 0
+                                "cost": 0,
+                                "calls": 0
                             }
                         
                         # Aggregate
@@ -76,6 +83,7 @@ def collect_usage_history():
                         daily[date][model]["cacheRead"] += usage.get("cacheRead", 0)
                         daily[date][model]["cacheWrite"] += usage.get("cacheWrite", 0)
                         daily[date][model]["cost"] += usage.get("cost", {}).get("total", 0)
+                        daily[date][model]["calls"] += 1
                     except:
                         continue
         except:

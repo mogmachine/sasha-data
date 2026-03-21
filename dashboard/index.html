@@ -282,6 +282,46 @@
             background: var(--accent);
             color: #fff;
         }
+        
+        .model-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .model-opus {
+            background: #8b5cf6;
+            color: #fff;
+        }
+        
+        .model-sonnet {
+            background: #3b82f6;
+            color: #fff;
+        }
+        
+        .model-haiku {
+            background: #00d4aa;
+            color: #fff;
+        }
+        
+        .model-other {
+            background: #6b7280;
+            color: #fff;
+        }
+        
+        .cost-value {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+        
+        .today-label {
+            color: var(--accent);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -340,12 +380,32 @@
             </div>
         </div>
         
-        <!-- Active Sessions & Cron Jobs -->
+        <!-- API Providers & Cost by Model -->
+        <div class="two-col">
+            <div class="card">
+                <h2>API Providers</h2>
+                <div id="providers-list"></div>
+            </div>
+            <div class="card">
+                <h2>Cost by Model</h2>
+                <div id="cost-by-model"></div>
+            </div>
+        </div>
+        
+        <!-- Active Sessions & Daily Costs -->
         <div class="two-col">
             <div class="card">
                 <h2>Recent Sessions</h2>
                 <div id="sessions-list"></div>
             </div>
+            <div class="card">
+                <h2>Daily Costs — Last 14 Days</h2>
+                <div id="daily-costs"></div>
+            </div>
+        </div>
+        
+        <!-- Cron Jobs -->
+        <div class="two-col">
             <div class="card">
                 <h2>Cron Jobs</h2>
                 <div id="cron-list"></div>
@@ -463,8 +523,17 @@
             // Render VPS resources
             renderVPSResources(vps);
             
+            // Render API Providers
+            renderProviders(usage);
+            
+            // Render Cost by Model
+            renderCostByModel(usage);
+            
             // Render sessions
             renderSessions(sessions);
+            
+            // Render daily costs
+            renderDailyCosts(usage);
             
             // Render cron jobs
             renderCron(cron);
@@ -578,6 +647,168 @@
                     <td>${shortModel}</td>
                     <td class="mono">${stats.tokens.toLocaleString()}</td>
                     <td class="mono">${formatCost(stats.cost)}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function getModelBadge(modelName) {
+            const lower = modelName.toLowerCase();
+            if (lower.includes('opus')) return 'model-opus';
+            if (lower.includes('sonnet')) return 'model-sonnet';
+            if (lower.includes('haiku')) return 'model-haiku';
+            return 'model-other';
+        }
+        
+        function renderProviders(usage) {
+            const container = document.getElementById('providers-list');
+            
+            if (!usage || !usage.providers) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            const providers = Object.entries(usage.providers).sort((a, b) => b[1].cost - a[1].cost);
+            
+            if (providers.length === 0) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            let html = '<table><thead><tr><th>Provider</th><th>Cost</th><th>Tokens</th></tr></thead><tbody>';
+            providers.forEach(([provider, stats]) => {
+                html += `<tr>
+                    <td>${provider}</td>
+                    <td class="mono cost-value">${formatCost(stats.cost)}</td>
+                    <td class="mono">${stats.tokens.toLocaleString()}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function renderCostByModel(usage) {
+            const container = document.getElementById('cost-by-model');
+            
+            if (!usage || !usage.daily) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            // Aggregate by model
+            const models = {};
+            Object.values(usage.daily).forEach(day => {
+                Object.entries(day).forEach(([model, stats]) => {
+                    if (!models[model]) {
+                        models[model] = { cost: 0, calls: 0 };
+                    }
+                    models[model].cost += stats.cost || 0;
+                    models[model].calls += stats.calls || 0;
+                });
+            });
+            
+            const totalCost = Object.values(models).reduce((sum, m) => sum + m.cost, 0);
+            const sorted = Object.entries(models).sort((a, b) => b[1].cost - a[1].cost);
+            
+            if (sorted.length === 0) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            let html = '<table><thead><tr><th>Model</th><th>Cost</th><th>Calls</th><th>Share</th></tr></thead><tbody>';
+            sorted.forEach(([model, stats]) => {
+                const shortModel = model.split('/').pop();
+                const badgeClass = getModelBadge(model);
+                const share = totalCost > 0 ? (stats.cost / totalCost * 100).toFixed(1) : 0;
+                
+                html += `<tr>
+                    <td><span class="model-badge ${badgeClass}">${shortModel}</span></td>
+                    <td class="mono cost-value">${formatCost(stats.cost)}</td>
+                    <td class="mono">${stats.calls.toLocaleString()}</td>
+                    <td class="mono">${share}%</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function renderDailyCosts(usage) {
+            const container = document.getElementById('daily-costs');
+            
+            if (!usage || !usage.daily) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            // Get last 14 days
+            const days = [];
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            
+            for (let i = 0; i < 14; i++) {
+                const date = new Date(today);
+                date.setDate(date.getDate() - i);
+                days.push(date.toISOString().split('T')[0]);
+            }
+            
+            // Collect daily stats
+            const dailyStats = [];
+            days.forEach(date => {
+                const dayData = usage.daily[date];
+                if (!dayData) {
+                    dailyStats.push({ date, cost: 0, calls: 0, topModel: null });
+                    return;
+                }
+                
+                let totalCost = 0;
+                let totalCalls = 0;
+                let topModel = null;
+                let topModelCost = 0;
+                
+                Object.entries(dayData).forEach(([model, stats]) => {
+                    totalCost += stats.cost || 0;
+                    totalCalls += stats.calls || 0;
+                    
+                    if (stats.cost > topModelCost) {
+                        topModelCost = stats.cost;
+                        topModel = model;
+                    }
+                });
+                
+                dailyStats.push({ date, cost: totalCost, calls: totalCalls, topModel });
+            });
+            
+            if (dailyStats.every(d => d.cost === 0 && d.calls === 0)) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            let html = '<table><thead><tr><th>Date</th><th>Cost</th><th>Calls</th><th>Top Model</th></tr></thead><tbody>';
+            dailyStats.forEach(({ date, cost, calls, topModel }) => {
+                const isToday = date === todayStr;
+                const dateLabel = isToday 
+                    ? '<span class="today-label">Today</span>' 
+                    : date.slice(5); // MM-DD
+                
+                const costStr = cost > 0 ? formatCost(cost) : '$0.00';
+                const callsStr = calls > 0 ? calls.toLocaleString() : '0';
+                
+                let modelBadge = '—';
+                if (topModel) {
+                    const shortModel = topModel.split('/').pop();
+                    const badgeClass = getModelBadge(topModel);
+                    modelBadge = `<span class="model-badge ${badgeClass}">${shortModel}</span>`;
+                }
+                
+                html += `<tr>
+                    <td>${dateLabel}</td>
+                    <td class="mono cost-value">${costStr}</td>
+                    <td class="mono">${callsStr}</td>
+                    <td>${modelBadge}</td>
                 </tr>`;
             });
             html += '</tbody></table>';

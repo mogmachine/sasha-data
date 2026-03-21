@@ -1,19 +1,58 @@
 {
-  "totalCommits": 1,
-  "totalFiles": 17,
+  "totalCommits": 2,
+  "totalFiles": 27,
   "extensions": {
     "no-ext": 1,
-    ".md": 16
+    ".md": 17,
+    ".py": 1,
+    ".json": 7,
+    ".html": 1
   },
-  "totalSize": 19922,
+  "totalSize": 93432,
   "largestFiles": [
+    {
+      "file": "dashboard/index.html",
+      "size": 34479
+    },
+    {
+      "file": "dashboard/collect.py",
+      "size": 16780
+    },
     {
       "file": "AGENTS.md",
       "size": 8771
     },
     {
+      "file": "dashboard/data/usage-history.json",
+      "size": 8497
+    },
+    {
       "file": "memory/2026-03-21.md",
       "size": 3335
+    },
+    {
+      "file": "dashboard/data/tasks.json",
+      "size": 2905
+    },
+    {
+      "file": "dashboard/data/vps-history.json",
+      "size": 2826
+    },
+    {
+      "file": "dashboard/README.md",
+      "size": 2717
+    },
+    {
+      "file": "dashboard/data/sessions.json",
+      "size": 2088
+    },
+    {
+      "file": "dashboard/data/cron.json",
+      "size": 1502
+    },
+    {
+      "file": "dashboard/data/git.json",
+      "size": 1336
     },
     {
       "file": "USER.md",
@@ -30,46 +69,10 @@
     {
       "file": "memory/projects/matilda-cafe.md",
       "size": 884
-    },
-    {
-      "file": "TODO.md",
-      "size": 857
-    },
-    {
-      "file": "CONTEXT.md",
-      "size": 724
-    },
-    {
-      "file": "TOOLS.md",
-      "size": 577
-    },
-    {
-      "file": "memory/2026-02-17.md",
-      "size": 323
-    },
-    {
-      "file": "IDENTITY.md",
-      "size": 176
-    },
-    {
-      "file": "HEARTBEAT.md",
-      "size": 168
-    },
-    {
-      "file": "memory/projects/pandora.md",
-      "size": 118
-    },
-    {
-      "file": "memory/2026-02-21.md",
-      "size": 106
-    },
-    {
-      "file": "memory/garden-log.md",
-      "size": 88
     }
   ],
   "commitsByDay": {
-    "2026-03-21": 1
+    "2026-03-21": 2
   },
-  "generated": "2026-03-21T08:00:04.394650"
+  "generated": "2026-03-21T08:25:04.729563"
 }

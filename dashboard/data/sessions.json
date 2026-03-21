@@ -1,12 +1,39 @@
 [
   {
+    "key": "agent:main:subagent:76ad6874-9ccc-4e62-b979-6371afb63454",
+    "agent": "unknown",
+    "label": "dashboard-daily-costs",
+    "model": "claude-sonnet-4-5",
+    "inputTokens": 119,
+    "outputTokens": 6591,
+    "updatedAt": 1774080560757
+  },
+  {
     "key": "agent:main:main",
     "agent": "unknown",
     "label": "",
     "model": "claude-opus-4-6",
-    "inputTokens": 19,
-    "outputTokens": 2949,
-    "updatedAt": 1774078300809
+    "inputTokens": 3,
+    "outputTokens": 107,
+    "updatedAt": 1774080560527
+  },
+  {
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577",
+    "agent": "unknown",
+    "label": "Cron: daily-git-backup",
+    "model": "claude-haiku-4-5",
+    "inputTokens": 23,
+    "outputTokens": 329,
+    "updatedAt": 1774080256212
+  },
+  {
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:4af7cf0b-e146-41d3-949b-a45b68079042",
+    "agent": "unknown",
+    "label": "Cron: daily-git-backup",
+    "model": "claude-haiku-4-5",
+    "inputTokens": 23,
+    "outputTokens": 329,
+    "updatedAt": 1774080256212
   },
   {
     "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27",

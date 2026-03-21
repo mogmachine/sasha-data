@@ -1,0 +1,5 @@
+# OpenClaw internal state
+.openclaw/
+
+# No secrets in repo
+secrets/

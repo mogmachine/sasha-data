@@ -202,6 +202,12 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - Commit and push your own changes
 - **Review and update MEMORY.md** (see below)
 
+### 📦 Git Backup Rules
+- **Daily minimum:** Cron job at 3am UTC handles this
+- **After key updates:** Commit and push after creating/updating TODO.md, project files, MEMORY.md, or any significant workspace changes
+- **During sessions:** If you make multiple file changes in a session, batch them into one commit at the end
+- **Commit messages:** Be descriptive: "Update café tasks + add garden log" not "Daily backup"
+
 ### 🔄 Memory Maintenance (During Heartbeats)
 
 Periodically (every few days), use a heartbeat to:

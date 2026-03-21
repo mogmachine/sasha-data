@@ -1,0 +1,47 @@
+[
+  {
+    "key": "agent:main:main",
+    "agent": "unknown",
+    "label": "",
+    "model": "claude-opus-4-6",
+    "inputTokens": 19,
+    "outputTokens": 2949,
+    "updatedAt": 1774078300809
+  },
+  {
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27",
+    "agent": "unknown",
+    "label": "Cron: daily-encrypted-backup",
+    "model": "claude-opus-4-6",
+    "inputTokens": 4,
+    "outputTokens": 134,
+    "updatedAt": 1774062000025
+  },
+  {
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:d398f98b-90d9-4a14-98d4-7802254652e8",
+    "agent": "unknown",
+    "label": "Cron: daily-encrypted-backup",
+    "model": "claude-opus-4-6",
+    "inputTokens": 4,
+    "outputTokens": 134,
+    "updatedAt": 1774062000025
+  },
+  {
+    "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623",
+    "agent": "unknown",
+    "label": "Cron: cafe-calls-reminder",
+    "model": "claude-opus-4-6",
+    "inputTokens": 5,
+    "outputTokens": 256,
+    "updatedAt": 1774000800017
+  },
+  {
+    "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623:run:0e258964-3726-4986-90e1-6212a04be9c4",
+    "agent": "unknown",
+    "label": "Cron: cafe-calls-reminder",
+    "model": "claude-opus-4-6",
+    "inputTokens": 5,
+    "outputTokens": 256,
+    "updatedAt": 1774000800017
+  }
+]

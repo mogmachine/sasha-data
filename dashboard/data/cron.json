@@ -1,0 +1,72 @@
+[
+  {
+    "id": "e83e4833-13d5-4ab3-aed4-396e18aced20",
+    "name": "marinated-carrots",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * *",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "40c221c2-a0f1-4dd3-b4f2-f13922286de3",
+    "name": "garden-picking-log",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * *",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "4351f4af-98f2-407f-9dae-4551280cb2aa",
+    "name": "chicken-coop-cleaning",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 * * *",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "440e0a7b-4780-4081-9b1e-12643e55eb27",
+    "name": "daily-encrypted-backup",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 3 * * *",
+      "tz": "UTC"
+    },
+    "enabled": true
+  },
+  {
+    "id": "9af52fbf-4bab-4c35-9c7f-da2f05f14577",
+    "name": "daily-git-backup",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 3 * * *",
+      "tz": "UTC"
+    },
+    "enabled": true
+  },
+  {
+    "id": "e80ec1a2-6458-4003-a1be-4c0b351e6623",
+    "name": "cafe-calls-reminder",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 * * 1-5",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "7c7819ed-9f83-467b-a25a-5e450378a14b",
+    "name": "swimming-reminder-friday",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * 5",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  }
+]

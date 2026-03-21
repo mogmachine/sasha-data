@@ -1,0 +1,75 @@
+{
+  "totalCommits": 1,
+  "totalFiles": 17,
+  "extensions": {
+    "no-ext": 1,
+    ".md": 16
+  },
+  "totalSize": 19922,
+  "largestFiles": [
+    {
+      "file": "AGENTS.md",
+      "size": 8771
+    },
+    {
+      "file": "memory/2026-03-21.md",
+      "size": 3335
+    },
+    {
+      "file": "USER.md",
+      "size": 1295
+    },
+    {
+      "file": "MEMORY.md",
+      "size": 1252
+    },
+    {
+      "file": "SOUL.md",
+      "size": 1104
+    },
+    {
+      "file": "memory/projects/matilda-cafe.md",
+      "size": 884
+    },
+    {
+      "file": "TODO.md",
+      "size": 857
+    },
+    {
+      "file": "CONTEXT.md",
+      "size": 724
+    },
+    {
+      "file": "TOOLS.md",
+      "size": 577
+    },
+    {
+      "file": "memory/2026-02-17.md",
+      "size": 323
+    },
+    {
+      "file": "IDENTITY.md",
+      "size": 176
+    },
+    {
+      "file": "HEARTBEAT.md",
+      "size": 168
+    },
+    {
+      "file": "memory/projects/pandora.md",
+      "size": 118
+    },
+    {
+      "file": "memory/2026-02-21.md",
+      "size": 106
+    },
+    {
+      "file": "memory/garden-log.md",
+      "size": 88
+    }
+  ],
+  "commitsByDay": {
+    "2026-03-21": 1
+  },
+  "generated": "2026-03-21T08:00:04.394650"
+}

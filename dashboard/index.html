@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
+    <title>🔹 Sasha Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #f5f6f6;
+            --card-bg: #ffffff;
+            --border: #e9eaeb;
+            --text: #0a0a0a;
+            --text-secondary: #666;
+            --accent: #00d4aa;
+            --shadow: rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="dark"] {
+            --bg: #0a0a0a;
+            --card-bg: #111111;
+            --border: #1e1e1e;
+            --text: #f5f6f6;
+            --text-secondary: #999;
+            --accent: #00d4aa;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+        
+        body {
+            font-family: 'Switzer', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .navbar {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .navbar-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .theme-toggle {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-family: inherit;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 0.5rem 0;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .chart-container {
+            margin-bottom: 2rem;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .navbar-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        td {
+            font-size: 0.9rem;
+        }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .progress-bar {
+            background: var(--border);
+            border-radius: 8px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: width 0.3s, background 0.3s;
+        }
+        
+        .progress-green { background: #00d4aa; color: #fff; }
+        .progress-yellow { background: #ffd700; color: #000; }
+        .progress-red { background: #ff4444; color: #fff; }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .metric-label {
+            font-weight: 500;
+        }
+        
+        .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+        }
+        
+        .task-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        
+        .task-done {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        
+        .priority-high { color: #ff4444; }
+        .priority-medium { color: #ffd700; }
+        
+        .no-data {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--border);
+        }
+        
+        .badge-enabled {
+            background: var(--accent);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">🔹 Sasha Dashboard</div>
+        <div class="navbar-nav">
+            <a href="#overview" class="nav-link">Overview</a>
+            <a href="#usage" class="nav-link">Usage</a>
+            <a href="#system" class="nav-link">System</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span id="theme-icon">🌙</span> Toggle Theme
+        </button>
+    </nav>
+    
+    <div class="container">
+        <!-- Stat Cards -->
+        <div class="stat-cards">
+            <div class="card stat-card">
+                <div class="stat-label">Sasha's Total Cost</div>
+                <div class="stat-value" id="total-cost">$0.00</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Today's Cost</div>
+                <div class="stat-value" id="today-cost">$0.00</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Sessions</div>
+                <div class="stat-value mono" id="session-count">0</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Cron Jobs</div>
+                <div class="stat-value mono" id="cron-count">0</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Uptime</div>
+                <div class="stat-value" id="uptime">0d</div>
+            </div>
+        </div>
+        
+        <!-- Daily Cost Chart -->
+        <div class="card chart-container" id="overview">
+            <h2>Daily Cost (Last 30 Days)</h2>
+            <canvas id="costChart"></canvas>
+        </div>
+        
+        <!-- Model Breakdown & VPS Resources -->
+        <div class="two-col" id="usage">
+            <div class="card">
+                <h2>Model Breakdown</h2>
+                <div id="model-breakdown"></div>
+            </div>
+            <div class="card">
+                <h2>VPS Resources</h2>
+                <div id="vps-resources"></div>
+            </div>
+        </div>
+        
+        <!-- Active Sessions & Cron Jobs -->
+        <div class="two-col">
+            <div class="card">
+                <h2>Recent Sessions</h2>
+                <div id="sessions-list"></div>
+            </div>
+            <div class="card">
+                <h2>Cron Jobs</h2>
+                <div id="cron-list"></div>
+            </div>
+        </div>
+        
+        <!-- Tasks & Git Stats -->
+        <div class="two-col" id="system">
+            <div class="card">
+                <h2>Tasks</h2>
+                <div id="tasks-list"></div>
+            </div>
+            <div class="card">
+                <h2>Git Stats</h2>
+                <div id="git-stats"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Theme management
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateThemeIcon();
+        
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateThemeIcon();
+        }
+        
+        function updateThemeIcon() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            document.getElementById('theme-icon').textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+        
+        // Data loading
+        async function lj(file) {
+            try {
+                const r = await fetch(`data/${file}?t=${Date.now()}`);
+                return r.ok ? await r.json() : null;
+            } catch {
+                return null;
+            }
+        }
+        
+        function formatCost(cost) {
+            return `$${cost.toFixed(2)}`;
+        }
+        
+        function formatBytes(bytes) {
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes === 0) return '0 B';
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
+        }
+        
+        function formatUptime(seconds) {
+            const days = Math.floor(seconds / 86400);
+            const hours = Math.floor((seconds % 86400) / 3600);
+            if (days > 0) return `${days}d ${hours}h`;
+            return `${hours}h`;
+        }
+        
+        function getProgressClass(percent) {
+            if (percent >= 90) return 'progress-red';
+            if (percent >= 70) return 'progress-yellow';
+            return 'progress-green';
+        }
+        
+        async function loadDashboard() {
+            const [usage, sessions, cron, tasks, vps, git] = await Promise.all([
+                lj('usage-history.json'),
+                lj('sessions.json'),
+                lj('cron.json'),
+                lj('tasks.json'),
+                lj('vps.json'),
+                lj('git.json')
+            ]);
+            
+            // Update stat cards
+            if (usage) {
+                document.getElementById('total-cost').textContent = formatCost(usage.grandTotal?.cost || 0);
+                
+                const today = new Date().toISOString().split('T')[0];
+                let todayCost = 0;
+                if (usage.daily && usage.daily[today]) {
+                    for (const model in usage.daily[today]) {
+                        todayCost += usage.daily[today][model].cost || 0;
+                    }
+                }
+                document.getElementById('today-cost').textContent = formatCost(todayCost);
+            }
+            
+            if (sessions) {
+                document.getElementById('session-count').textContent = sessions.length;
+            }
+            
+            if (cron) {
+                document.getElementById('cron-count').textContent = cron.length;
+            }
+            
+            if (vps) {
+                document.getElementById('uptime').textContent = formatUptime(vps.uptime || 0);
+            }
+            
+            // Render daily cost chart
+            renderCostChart(usage);
+            
+            // Render model breakdown
+            renderModelBreakdown(usage);
+            
+            // Render VPS resources
+            renderVPSResources(vps);
+            
+            // Render sessions
+            renderSessions(sessions);
+            
+            // Render cron jobs
+            renderCron(cron);
+            
+            // Render tasks
+            renderTasks(tasks);
+            
+            // Render git stats
+            renderGitStats(git);
+        }
+        
+        function renderCostChart(usage) {
+            if (!usage || !usage.daily) {
+                document.getElementById('costChart').parentElement.innerHTML = '<div class="no-data">No usage data</div>';
+                return;
+            }
+            
+            // Get last 30 days
+            const days = [];
+            const today = new Date();
+            for (let i = 29; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(date.getDate() - i);
+                days.push(date.toISOString().split('T')[0]);
+            }
+            
+            // Collect all models
+            const models = new Set();
+            Object.values(usage.daily).forEach(day => {
+                Object.keys(day).forEach(model => models.add(model));
+            });
+            
+            // Prepare datasets
+            const datasets = Array.from(models).map((model, idx) => {
+                const colors = ['#00d4aa', '#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf', '#ff8b94'];
+                const color = colors[idx % colors.length];
+                
+                return {
+                    label: model,
+                    data: days.map(day => {
+                        const dayData = usage.daily[day];
+                        return dayData && dayData[model] ? dayData[model].cost : 0;
+                    }),
+                    backgroundColor: color,
+                    borderColor: color,
+                    borderWidth: 0
+                };
+            });
+            
+            const ctx = document.getElementById('costChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: days.map(d => d.slice(5)),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    aspectRatio: 2.5,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: { display: false }
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            ticks: {
+                                callback: value => '$' + value.toFixed(2)
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function renderModelBreakdown(usage) {
+            const container = document.getElementById('model-breakdown');
+            
+            if (!usage || !usage.daily) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            // Aggregate by model
+            const models = {};
+            Object.values(usage.daily).forEach(day => {
+                Object.entries(day).forEach(([model, stats]) => {
+                    if (!models[model]) {
+                        models[model] = { tokens: 0, cost: 0 };
+                    }
+                    models[model].tokens += (stats.input || 0) + (stats.output || 0);
+                    models[model].cost += stats.cost || 0;
+                });
+            });
+            
+            // Sort by cost
+            const sorted = Object.entries(models).sort((a, b) => b[1].cost - a[1].cost);
+            
+            let html = '<table><thead><tr><th>Model</th><th>Tokens</th><th>Cost</th></tr></thead><tbody>';
+            sorted.forEach(([model, stats]) => {
+                const shortModel = model.split('/').pop();
+                html += `<tr>
+                    <td>${shortModel}</td>
+                    <td class="mono">${stats.tokens.toLocaleString()}</td>
+                    <td class="mono">${formatCost(stats.cost)}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function renderVPSResources(vps) {
+            const container = document.getElementById('vps-resources');
+            
+            if (!vps) {
+                container.innerHTML = '<div class="no-data">No data</div>';
+                return;
+            }
+            
+            const memPercent = vps.memory?.percent || 0;
+            const diskPercent = vps.disk?.percent || 0;
+            const load = vps.load?.['1min'] || 0;
+            const cores = vps.cpuCores || 1;
+            
+            let html = `
+                <div class="metric-row">
+                    <span class="metric-label">Memory</span>
+                    <span class="metric-value">${formatBytes(vps.memory?.used || 0)} / ${formatBytes(vps.memory?.total || 0)}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill ${getProgressClass(memPercent)}" style="width: ${memPercent}%">
+                        ${memPercent.toFixed(1)}%
+                    </div>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-label">Disk</span>
+                    <span class="metric-value">${formatBytes(vps.disk?.used || 0)} / ${formatBytes(vps.disk?.total || 0)}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill ${getProgressClass(diskPercent)}" style="width: ${diskPercent}%">
+                        ${diskPercent.toFixed(1)}%
+                    </div>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-label">Load Average</span>
+                    <span class="metric-value">${load.toFixed(2)} / ${cores} cores</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-label">OpenClaw Size</span>
+                    <span class="metric-value">${formatBytes(vps.openclawSize || 0)}</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-label">Session Files</span>
+                    <span class="metric-value">${vps.sessionCount || 0}</span>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+        
+        function renderSessions(sessions) {
+            const container = document.getElementById('sessions-list');
+            
+            if (!sessions || sessions.length === 0) {
+                container.innerHTML = '<div class="no-data">No sessions</div>';
+                return;
+            }
+            
+            let html = '<table><thead><tr><th>Label</th><th>Model</th><th>Tokens</th></tr></thead><tbody>';
+            sessions.slice(0, 10).forEach(session => {
+                const label = session.label || session.key.slice(0, 8);
+                const model = session.model.split('/').pop() || 'unknown';
+                const tokens = (session.inputTokens || 0) + (session.outputTokens || 0);
+                html += `<tr>
+                    <td>${label}</td>
+                    <td class="mono">${model}</td>
+                    <td class="mono">${tokens.toLocaleString()}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function renderCron(cron) {
+            const container = document.getElementById('cron-list');
+            
+            if (!cron || cron.length === 0) {
+                container.innerHTML = '<div class="no-data">No cron jobs</div>';
+                return;
+            }
+            
+            let html = '<table><thead><tr><th>Name</th><th>Schedule</th><th>Status</th></tr></thead><tbody>';
+            cron.forEach(job => {
+                const badge = job.enabled ? 'badge-enabled' : '';
+                const status = job.enabled ? 'Enabled' : 'Disabled';
+                html += `<tr>
+                    <td>${job.name}</td>
+                    <td class="mono">${job.schedule}</td>
+                    <td><span class="badge ${badge}">${status}</span></td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            
+            container.innerHTML = html;
+        }
+        
+        function renderTasks(tasks) {
+            const container = document.getElementById('tasks-list');
+            
+            if (!tasks || tasks.length === 0) {
+                container.innerHTML = '<div class="no-data">No tasks</div>';
+                return;
+            }
+            
+            let html = '';
+            tasks.forEach(task => {
+                const doneClass = task.done ? 'task-done' : '';
+                const priorityClass = task.priority === 'high' ? 'priority-high' : task.priority === 'medium' ? 'priority-medium' : '';
+                const checkbox = task.done ? '✓' : '○';
+                html += `<div class="task-item ${doneClass}">
+                    <span class="mono">${checkbox}</span> 
+                    <span class="${priorityClass}">${task.text}</span>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function renderGitStats(git) {
+            const container = document.getElementById('git-stats');
+            
+            if (!git) {
+                container.innerHTML = '<div class="no-data">No git data</div>';
+                return;
+            }
+            
+            const commitCount = Object.values(git.commitsByDay || {}).reduce((a, b) => a + b, 0);
+            
+            let html = `
+                <div class="metric-row">
+                    <span class="metric-label">Total Commits</span>
+                    <span class="metric-value mono">${(git.totalCommits || 0).toLocaleString()}</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Commits (30d)</span>
+                    <span class="metric-value mono">${commitCount.toLocaleString()}</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Total Files</span>
+                    <span class="metric-value mono">${(git.totalFiles || 0).toLocaleString()}</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Repository Size</span>
+                    <span class="metric-value">${formatBytes(git.totalSize || 0)}</span>
+                </div>
+            `;
+            
+            if (git.largestFiles && git.largestFiles.length > 0) {
+                html += '<h3 style="margin-top: 1rem; font-size: 1rem;">Largest Files</h3>';
+                git.largestFiles.slice(0, 5).forEach(file => {
+                    const name = file.file.split('/').pop();
+                    html += `<div class="metric-row" style="font-size: 0.85rem;">
+                        <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${name}</span>
+                        <span class="metric-value">${formatBytes(file.size)}</span>
+                    </div>`;
+                });
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Load dashboard on page load
+        loadDashboard();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(loadDashboard, 300000);
+    </script>
+</body>
+</html>

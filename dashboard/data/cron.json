@@ -1,5 +1,25 @@
 [
   {
+    "id": "440e0a7b-4780-4081-9b1e-12643e55eb27",
+    "name": "daily-encrypted-backup",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 3 * * *",
+      "tz": "UTC"
+    },
+    "enabled": true
+  },
+  {
+    "id": "9af52fbf-4bab-4c35-9c7f-da2f05f14577",
+    "name": "daily-git-backup",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 3 * * *",
+      "tz": "UTC"
+    },
+    "enabled": true
+  },
+  {
     "id": "e83e4833-13d5-4ab3-aed4-396e18aced20",
     "name": "marinated-carrots",
     "schedule": {
@@ -26,26 +46,6 @@
       "kind": "cron",
       "expr": "0 10 * * *",
       "tz": "Europe/Lisbon"
-    },
-    "enabled": true
-  },
-  {
-    "id": "440e0a7b-4780-4081-9b1e-12643e55eb27",
-    "name": "daily-encrypted-backup",
-    "schedule": {
-      "kind": "cron",
-      "expr": "0 3 * * *",
-      "tz": "UTC"
-    },
-    "enabled": true
-  },
-  {
-    "id": "9af52fbf-4bab-4c35-9c7f-da2f05f14577",
-    "name": "daily-git-backup",
-    "schedule": {
-      "kind": "cron",
-      "expr": "0 3 * * *",
-      "tz": "UTC"
     },
     "enabled": true
   },

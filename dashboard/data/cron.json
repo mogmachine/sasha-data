@@ -40,21 +40,21 @@
     "enabled": true
   },
   {
-    "id": "4351f4af-98f2-407f-9dae-4551280cb2aa",
-    "name": "chicken-coop-cleaning",
-    "schedule": {
-      "kind": "cron",
-      "expr": "0 10 * * *",
-      "tz": "Europe/Lisbon"
-    },
-    "enabled": true
-  },
-  {
     "id": "e80ec1a2-6458-4003-a1be-4c0b351e6623",
     "name": "cafe-calls-reminder",
     "schedule": {
       "kind": "cron",
       "expr": "0 10 * * 1-5",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "4351f4af-98f2-407f-9dae-4551280cb2aa",
+    "name": "chicken-coop-cleaning",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 * * *",
       "tz": "Europe/Lisbon"
     },
     "enabled": true

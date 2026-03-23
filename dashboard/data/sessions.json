@@ -3,19 +3,19 @@
     "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
-    "model": "claude-opus-4-6",
+    "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1774148400021
+    "updatedAt": 1774234800019
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:1c40d504-c380-4a95-8ece-7e717da3e004",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:7f559a29-4fe1-42ad-b9b1-9581b97e0739",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
-    "model": "claude-opus-4-6",
+    "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1774148400021
+    "updatedAt": 1774234800019
   },
   {
     "key": "agent:main:main",
@@ -23,8 +23,8 @@
     "label": "",
     "model": "claude-opus-4-6",
     "inputTokens": 3,
-    "outputTokens": 24,
-    "updatedAt": 1774087204119
+    "outputTokens": 14,
+    "updatedAt": 1774173603628
   },
   {
     "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577",
@@ -32,26 +32,26 @@
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 329,
-    "updatedAt": 1774080256212
+    "outputTokens": 639,
+    "updatedAt": 1774148407564
   },
   {
-    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:4af7cf0b-e146-41d3-949b-a45b68079042",
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:182aecc1-09ea-4a2c-8a18-7b53912f2603",
     "agent": "unknown",
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 329,
-    "updatedAt": 1774080256212
+    "outputTokens": 639,
+    "updatedAt": 1774148407564
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:d398f98b-90d9-4a14-98d4-7802254652e8",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:1c40d504-c380-4a95-8ece-7e717da3e004",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
-    "model": "claude-opus-4-6",
-    "inputTokens": 4,
-    "outputTokens": 134,
-    "updatedAt": 1774062000025
+    "model": "claude-haiku-4-5",
+    "inputTokens": 22,
+    "outputTokens": 325,
+    "updatedAt": 1774148400021
   },
   {
     "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623",

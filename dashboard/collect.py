@@ -29,15 +29,12 @@ def collect_usage_history():
     """Scan session JSONL files and aggregate usage by day and model."""
     print("Collecting usage history...")
     
-    # Load existing data to preserve history
+    # Load existing data to preserve history from rotated/deleted sessions
     existing = load_json(DATA_DIR / "usage-history.json")
-    daily = existing.get("daily", {})
+    old_daily = existing.get("daily", {})
     
-    # Ensure all existing entries have calls field (backward compatibility)
-    for date in daily:
-        for model in daily[date]:
-            if "calls" not in daily[date][model]:
-                daily[date][model]["calls"] = 0
+    # Fresh scan — aggregate into new dict to avoid double-counting
+    scanned_daily = {}
     
     # Scan all session JSONL files
     pattern = "/home/ubuntu/.openclaw/agents/*/sessions/*.jsonl"
@@ -65,10 +62,10 @@ def collect_usage_history():
                         model = msg.get("model", "unknown")
                         
                         # Initialize daily entry
-                        if date not in daily:
-                            daily[date] = {}
-                        if model not in daily[date]:
-                            daily[date][model] = {
+                        if date not in scanned_daily:
+                            scanned_daily[date] = {}
+                        if model not in scanned_daily[date]:
+                            scanned_daily[date][model] = {
                                 "input": 0,
                                 "output": 0,
                                 "cacheRead": 0,
@@ -78,16 +75,24 @@ def collect_usage_history():
                             }
                         
                         # Aggregate
-                        daily[date][model]["input"] += usage.get("input", 0)
-                        daily[date][model]["output"] += usage.get("output", 0)
-                        daily[date][model]["cacheRead"] += usage.get("cacheRead", 0)
-                        daily[date][model]["cacheWrite"] += usage.get("cacheWrite", 0)
-                        daily[date][model]["cost"] += usage.get("cost", {}).get("total", 0)
-                        daily[date][model]["calls"] += 1
+                        scanned_daily[date][model]["input"] += usage.get("input", 0)
+                        scanned_daily[date][model]["output"] += usage.get("output", 0)
+                        scanned_daily[date][model]["cacheRead"] += usage.get("cacheRead", 0)
+                        scanned_daily[date][model]["cacheWrite"] += usage.get("cacheWrite", 0)
+                        scanned_daily[date][model]["cost"] += usage.get("cost", {}).get("total", 0)
+                        scanned_daily[date][model]["calls"] += 1
                     except:
                         continue
         except:
             continue
+    
+    # Merge: scanned days overwrite, old days not in scan are preserved
+    daily = {}
+    for date in old_daily:
+        if date not in scanned_daily:
+            daily[date] = old_daily[date]
+    for date in scanned_daily:
+        daily[date] = scanned_daily[date]
     
     # Calculate totals
     grand_total = {"tokens": 0, "cost": 0}

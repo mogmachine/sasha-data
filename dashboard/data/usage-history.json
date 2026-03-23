@@ -1,21 +1,21 @@
 {
   "daily": {
     "2026-03-21": {
-      "claude-sonnet-4-5": {
-        "input": 2296,
-        "output": 163908,
-        "cacheRead": 6718190,
-        "cacheWrite": 587113,
-        "cost": 6.68263875000001,
-        "calls": 190
+      "claude-haiku-4-5": {
+        "input": 23,
+        "output": 329,
+        "cacheRead": 13348,
+        "cacheWrite": 13611,
+        "cost": 0.02001655,
+        "calls": 2
       },
       "claude-opus-4-6": {
-        "input": 48252,
-        "output": 6819415,
-        "cacheRead": 3097702287,
-        "cacheWrite": 1173907053,
-        "cost": 9056.496859749954,
-        "calls": 29799
+        "input": 205,
+        "output": 28791,
+        "cacheRead": 13129911,
+        "cacheWrite": 4996953,
+        "cost": 38.51671175,
+        "calls": 131
       },
       "delivery-mirror": {
         "input": 0,
@@ -23,361 +23,371 @@
         "cacheRead": 0,
         "cacheWrite": 0,
         "cost": 0,
-        "calls": 456
-      },
-      "claude-haiku-4-5": {
-        "input": 5290,
-        "output": 75670,
-        "cacheRead": 3070040,
-        "cacheWrite": 3130530,
-        "cost": 4.603806500000006,
-        "calls": 456
+        "calls": 2
       }
     },
     "2026-03-12": {
       "claude-opus-4-6": {
-        "input": 7140,
-        "output": 225862,
-        "cacheRead": 31201086,
-        "cacheWrite": 33648440,
-        "cost": 231.58554300000088,
-        "calls": 3192
+        "input": 30,
+        "output": 949,
+        "cacheRead": 131097,
+        "cacheWrite": 141380,
+        "cost": 0.9730484999999999,
+        "calls": 14
       }
     },
     "2026-03-14": {
       "claude-opus-4-6": {
-        "input": 1666,
-        "output": 36652,
-        "cacheRead": 3074722,
-        "cacheWrite": 6950552,
-        "cost": 45.902941000000084,
-        "calls": 684
+        "input": 7,
+        "output": 154,
+        "cacheRead": 12919,
+        "cacheWrite": 29204,
+        "cost": 0.19286950000000003,
+        "calls": 3
       }
     },
     "2026-03-20": {
       "claude-opus-4-6": {
-        "input": 7378,
-        "output": 355096,
-        "cacheRead": 13306818,
-        "cacheWrite": 35105714,
-        "cost": 234.97841150000497,
-        "calls": 2964
+        "input": 31,
+        "output": 1492,
+        "cacheRead": 55911,
+        "cacheWrite": 147503,
+        "cost": 0.9873042500000001,
+        "calls": 13
       }
     },
     "2026-03-10": {
       "claude-opus-4-6": {
-        "input": 6664,
-        "output": 197540,
-        "cacheRead": 21249830,
-        "cacheWrite": 31443132,
-        "cost": 212.1163100000027,
-        "calls": 2736
+        "input": 28,
+        "output": 830,
+        "cacheRead": 89285,
+        "cacheWrite": 132114,
+        "cost": 0.891245,
+        "calls": 12
       }
     },
     "2026-02-18": {
       "claude-opus-4-6": {
-        "input": 25942,
-        "output": 1651958,
-        "cacheRead": 937448442,
-        "cacheWrite": 883927240,
-        "cost": 6034.698131000064,
-        "calls": 12540
+        "input": 109,
+        "output": 6941,
+        "cacheRead": 3938859,
+        "cacheWrite": 3713980,
+        "cost": 25.355874500000006,
+        "calls": 55
       }
     },
     "2026-02-22": {
       "claude-opus-4-6": {
-        "input": 2380,
-        "output": 62832,
-        "cacheRead": 3078768,
-        "cacheWrite": 10862796,
-        "cost": 71.01455900000025,
-        "calls": 912
+        "input": 10,
+        "output": 264,
+        "cacheRead": 12936,
+        "cacheWrite": 45642,
+        "cost": 0.2983805,
+        "calls": 4
       }
     },
     "2026-02-26": {
       "claude-opus-4-6": {
-        "input": 5236,
-        "output": 188258,
-        "cacheRead": 13976550,
-        "cacheWrite": 22104012,
-        "cost": 149.87098000000003,
-        "calls": 2280
+        "input": 22,
+        "output": 791,
+        "cacheRead": 58725,
+        "cacheWrite": 92874,
+        "cost": 0.6297100000000001,
+        "calls": 10
+      }
+    },
+    "2026-03-22": {
+      "claude-haiku-4-5": {
+        "input": 45,
+        "output": 964,
+        "cacheRead": 39445,
+        "cacheWrite": 14790,
+        "cost": 0.027297000000000002,
+        "calls": 4
+      },
+      "claude-opus-4-6": {
+        "input": 23,
+        "output": 2562,
+        "cacheRead": 1769770,
+        "cacheWrite": 536457,
+        "cost": 4.30190625,
+        "calls": 13
       }
     },
     "2026-03-09": {
       "claude-opus-4-6": {
-        "input": 8806,
-        "output": 391986,
-        "cacheRead": 46489016,
-        "cacheWrite": 33232892,
-        "cost": 240.79376299999132,
-        "calls": 4332
+        "input": 37,
+        "output": 1647,
+        "cacheRead": 195332,
+        "cacheWrite": 139634,
+        "cost": 1.0117384999999999,
+        "calls": 19
       }
     },
     "2026-03-01": {
       "claude-opus-4-6": {
-        "input": 2380,
-        "output": 49980,
-        "cacheRead": 6906998,
-        "cacheWrite": 7006720,
-        "cost": 48.50689900000019,
-        "calls": 912
+        "input": 10,
+        "output": 210,
+        "cacheRead": 29021,
+        "cacheWrite": 29440,
+        "cost": 0.2038105,
+        "calls": 4
       }
     },
     "2026-03-02": {
       "claude-opus-4-6": {
-        "input": 4046,
-        "output": 115430,
-        "cacheRead": 10168074,
-        "cacheWrite": 14247632,
-        "cost": 97.03771700000073,
-        "calls": 1596
+        "input": 17,
+        "output": 485,
+        "cacheRead": 42723,
+        "cacheWrite": 59864,
+        "cost": 0.4077215,
+        "calls": 7
       }
     },
     "2026-03-03": {
       "claude-opus-4-6": {
-        "input": 5236,
-        "output": 157556,
-        "cacheRead": 19184704,
-        "cacheWrite": 19225164,
-        "cost": 133.7147070000006,
-        "calls": 2280
+        "input": 22,
+        "output": 662,
+        "cacheRead": 80608,
+        "cacheWrite": 80778,
+        "cost": 0.5618265,
+        "calls": 10
       }
     },
     "2026-03-04": {
       "claude-opus-4-6": {
-        "input": 5474,
-        "output": 192304,
-        "cacheRead": 20689102,
-        "cacheWrite": 25579764,
-        "cost": 175.05304600000093,
-        "calls": 2508
+        "input": 23,
+        "output": 808,
+        "cacheRead": 86929,
+        "cacheWrite": 107478,
+        "cost": 0.7355170000000001,
+        "calls": 11
       }
     },
     "2026-03-05": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 123998,
-        "cacheRead": 14438746,
-        "cacheWrite": 16475312,
-        "cost": 113.31144299999922,
-        "calls": 1824
+        "input": 18,
+        "output": 521,
+        "cacheRead": 60667,
+        "cacheWrite": 69224,
+        "cost": 0.47609850000000004,
+        "calls": 8
       }
     },
     "2026-03-17": {
       "claude-opus-4-6": {
-        "input": 3570,
-        "output": 105672,
-        "cacheRead": 9338882,
-        "cacheWrite": 14847154,
-        "cost": 100.12380349999931,
-        "calls": 1596
+        "input": 15,
+        "output": 444,
+        "cacheRead": 39239,
+        "cacheWrite": 62383,
+        "cost": 0.42068825000000004,
+        "calls": 7
       }
     },
     "2026-03-07": {
       "claude-opus-4-6": {
-        "input": 2380,
-        "output": 46648,
-        "cacheRead": 6906998,
-        "cacheWrite": 7000532,
-        "cost": 48.3849239999995,
-        "calls": 912
+        "input": 10,
+        "output": 196,
+        "cacheRead": 29021,
+        "cacheWrite": 29414,
+        "cost": 0.203298,
+        "calls": 4
       }
     },
     "2026-03-15": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 148036,
-        "cacheRead": 10853514,
-        "cacheWrite": 19047616,
-        "cost": 128.1966770000028,
-        "calls": 1824
+        "input": 18,
+        "output": 622,
+        "cacheRead": 45603,
+        "cacheWrite": 80032,
+        "cost": 0.5386415,
+        "calls": 8
       }
     },
     "2026-02-21": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 276556,
-        "cacheRead": 23466562,
-        "cacheWrite": 15493086,
-        "cost": 115.50038849999959,
-        "calls": 2280
+        "input": 18,
+        "output": 1162,
+        "cacheRead": 98599,
+        "cacheWrite": 65097,
+        "cost": 0.48529575,
+        "calls": 10
       }
     },
     "2026-02-27": {
       "claude-opus-4-6": {
-        "input": 6188,
-        "output": 229908,
-        "cacheRead": 9993858,
-        "cacheWrite": 26397532,
-        "cost": 175.76014399999767,
-        "calls": 2280
+        "input": 26,
+        "output": 966,
+        "cacheRead": 41991,
+        "cacheWrite": 110914,
+        "cost": 0.7384879999999999,
+        "calls": 10
       }
     },
     "2026-03-06": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 166600,
-        "cacheRead": 13328714,
-        "cacheWrite": 14220738,
-        "cost": 99.73038949999895,
-        "calls": 2052
+        "input": 18,
+        "output": 700,
+        "cacheRead": 56003,
+        "cacheWrite": 59751,
+        "cost": 0.41903525,
+        "calls": 9
       }
     },
     "2026-03-19": {
       "claude-opus-4-6": {
-        "input": 3570,
-        "output": 112098,
-        "cacheRead": 9339834,
-        "cacheWrite": 15303638,
-        "cost": 103.13795450000079,
-        "calls": 1596
+        "input": 15,
+        "output": 471,
+        "cacheRead": 39243,
+        "cacheWrite": 64301,
+        "cost": 0.43335275,
+        "calls": 7
       }
     },
     "2026-02-19": {
       "claude-opus-4-6": {
-        "input": 5236,
-        "output": 165172,
-        "cacheRead": 50795626,
-        "cacheWrite": 172234888,
-        "cost": 1106.02134300001,
-        "calls": 2280
+        "input": 22,
+        "output": 694,
+        "cacheRead": 213427,
+        "cacheWrite": 723676,
+        "cost": 4.6471485,
+        "calls": 10
       }
     },
     "2026-02-24": {
       "claude-opus-4-6": {
-        "input": 17374,
-        "output": 682346,
-        "cacheRead": 79535554,
-        "cacheWrite": 77487802,
-        "cost": 541.2120595000056,
-        "calls": 8436
+        "input": 73,
+        "output": 2867,
+        "cacheRead": 334183,
+        "cacheWrite": 325579,
+        "cost": 2.2740002500000003,
+        "calls": 37
       }
     },
     "2026-03-11": {
       "claude-opus-4-6": {
-        "input": 4046,
-        "output": 104720,
-        "cacheRead": 11389966,
-        "cacheWrite": 16702364,
-        "cost": 112.72298800000084,
-        "calls": 1596
+        "input": 17,
+        "output": 440,
+        "cacheRead": 47857,
+        "cacheWrite": 70178,
+        "cost": 0.473626,
+        "calls": 7
       }
     },
     "2026-02-20": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 133756,
-        "cacheRead": 9333408,
-        "cacheWrite": 17954482,
-        "cost": 120.24753649999921,
-        "calls": 1824
+        "input": 18,
+        "output": 562,
+        "cacheRead": 39216,
+        "cacheWrite": 75439,
+        "cost": 0.50524175,
+        "calls": 8
       }
     },
     "2026-03-08": {
       "claude-opus-4-6": {
-        "input": 2380,
-        "output": 47600,
-        "cacheRead": 6906998,
-        "cacheWrite": 7001008,
-        "cost": 48.4116989999998,
-        "calls": 912
+        "input": 10,
+        "output": 200,
+        "cacheRead": 29021,
+        "cacheWrite": 29416,
+        "cost": 0.20341050000000002,
+        "calls": 4
       }
     },
     "2026-03-13": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 168266,
-        "cacheRead": 9338882,
-        "cacheWrite": 18031594,
-        "cost": 121.59497350000179,
-        "calls": 1824
+        "input": 18,
+        "output": 707,
+        "cacheRead": 39239,
+        "cacheWrite": 75763,
+        "cost": 0.51090325,
+        "calls": 8
       }
     },
     "2026-02-23": {
       "claude-opus-4-6": {
-        "input": 4284,
-        "output": 138278,
-        "cacheRead": 9333408,
-        "cacheWrite": 18023264,
-        "cost": 120.79047400000101,
-        "calls": 2508
+        "input": 18,
+        "output": 581,
+        "cacheRead": 39216,
+        "cacheWrite": 75728,
+        "cost": 0.507523,
+        "calls": 11
       }
     },
     "2026-03-16": {
       "claude-opus-4-6": {
-        "input": 3808,
-        "output": 168028,
-        "cacheRead": 12337682,
-        "cacheWrite": 14878808,
-        "cost": 103.38113099999968,
-        "calls": 1824
+        "input": 16,
+        "output": 706,
+        "cacheRead": 51839,
+        "cacheWrite": 62516,
+        "cost": 0.4343745,
+        "calls": 8
       }
     },
     "2026-03-18": {
       "claude-opus-4-6": {
-        "input": 3570,
-        "output": 124474,
-        "cacheRead": 9338882,
-        "cacheWrite": 15075872,
-        "cost": 102.02334100000114,
-        "calls": 1596
+        "input": 15,
+        "output": 523,
+        "cacheRead": 39239,
+        "cacheWrite": 63344,
+        "cost": 0.42866950000000004,
+        "calls": 7
       }
     },
     "2026-02-25": {
       "claude-opus-4-6": {
-        "input": 8092,
-        "output": 441490,
-        "cacheRead": 30509458,
-        "cacheWrite": 43598030,
-        "cost": 298.82012650000354,
-        "calls": 3648
+        "input": 34,
+        "output": 1855,
+        "cacheRead": 128191,
+        "cacheWrite": 183185,
+        "cost": 1.25554675,
+        "calls": 16
       }
     },
     "2026-02-28": {
       "claude-opus-4-6": {
-        "input": 7378,
-        "output": 326774,
-        "cacheRead": 29335642,
-        "cacheWrite": 35413210,
-        "cost": 244.20662350000492,
-        "calls": 3420
+        "input": 31,
+        "output": 1373,
+        "cacheRead": 123259,
+        "cacheWrite": 148795,
+        "cost": 1.02607825,
+        "calls": 15
       }
     },
     "2026-02-17": {
       "claude-opus-4-6": {
-        "input": 8330,
-        "output": 192780,
-        "cacheRead": 35062398,
-        "cacheWrite": 324030574,
-        "cost": 2047.583436500052,
-        "calls": 2964
+        "input": 35,
+        "output": 810,
+        "cacheRead": 147321,
+        "cacheWrite": 1361473,
+        "cost": 8.60329175,
+        "calls": 13
       }
     },
     "2026-02-16": {
       "claude-opus-4-6": {
-        "input": 26180,
-        "output": 2915024,
-        "cacheRead": 1743407834,
-        "cacheWrite": 378433328,
-        "cost": 3309.918716999969,
-        "calls": 22800
+        "input": 110,
+        "output": 12248,
+        "cacheRead": 7325243,
+        "cacheWrite": 1590056,
+        "cost": 13.9072215,
+        "calls": 100
       }
     }
   },
   "grandTotal": {
-    "tokens": 17772947,
-    "cost": 25904.136485500065
+    "tokens": 77724,
+    "cost": 113.6069113
   },
   "weekly": {
-    "tokens": 8002095,
-    "cost": 9711.42794649996
+    "tokens": 35948,
+    "cost": 45.13594629999999
   },
   "providers": {
     "unknown": {
-      "tokens": 17772947,
-      "cost": 25904.136485500065
+      "tokens": 77724,
+      "cost": 113.6069113
     }
   },
-  "generated": "2026-03-22T03:00:01.197816"
+  "generated": "2026-03-23T03:00:01.182696"
 }

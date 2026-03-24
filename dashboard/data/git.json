@@ -1,5 +1,5 @@
 {
-  "totalCommits": 4,
+  "totalCommits": 5,
   "totalFiles": 27,
   "extensions": {
     "no-ext": 1,
@@ -8,11 +8,11 @@
     ".json": 7,
     ".html": 1
   },
-  "totalSize": 150390,
+  "totalSize": 167014,
   "largestFiles": [
     {
       "file": "dashboard/data/vps-history.json",
-      "size": 58461
+      "size": 73169
     },
     {
       "file": "dashboard/index.html",
@@ -23,12 +23,12 @@
       "size": 17028
     },
     {
-      "file": "AGENTS.md",
-      "size": 8771
+      "file": "dashboard/data/usage-history.json",
+      "size": 8988
     },
     {
-      "file": "dashboard/data/usage-history.json",
-      "size": 8355
+      "file": "AGENTS.md",
+      "size": 8771
     },
     {
       "file": "memory/2026-03-21.md",
@@ -44,7 +44,11 @@
     },
     {
       "file": "dashboard/data/sessions.json",
-      "size": 1833
+      "size": 2131
+    },
+    {
+      "file": "memory/projects/matilda-cafe.md",
+      "size": 1847
     },
     {
       "file": "dashboard/data/cron.json",
@@ -52,7 +56,7 @@
     },
     {
       "file": "dashboard/data/git.json",
-      "size": 1359
+      "size": 1381
     },
     {
       "file": "USER.md",
@@ -65,15 +69,12 @@
     {
       "file": "SOUL.md",
       "size": 1104
-    },
-    {
-      "file": "memory/projects/matilda-cafe.md",
-      "size": 884
     }
   ],
   "commitsByDay": {
+    "2026-03-23": 1,
     "2026-03-22": 1,
     "2026-03-21": 3
   },
-  "generated": "2026-03-23T03:00:03.911218"
+  "generated": "2026-03-24T03:00:04.649659"
 }

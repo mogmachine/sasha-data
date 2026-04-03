@@ -20,6 +20,16 @@
     "enabled": true
   },
   {
+    "id": "7c7819ed-9f83-467b-a25a-5e450378a14b",
+    "name": "swimming-reminder-friday",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * 5",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
     "id": "e83e4833-13d5-4ab3-aed4-396e18aced20",
     "name": "marinated-carrots",
     "schedule": {
@@ -32,6 +42,16 @@
   {
     "id": "40c221c2-a0f1-4dd3-b4f2-f13922286de3",
     "name": "garden-picking-log",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * *",
+      "tz": "Europe/Lisbon"
+    },
+    "enabled": true
+  },
+  {
+    "id": "c0399155-681e-4770-9a8f-74c9678fc7c8",
+    "name": "cafe-lighting-check",
     "schedule": {
       "kind": "cron",
       "expr": "0 9 * * *",
@@ -55,16 +75,6 @@
     "schedule": {
       "kind": "cron",
       "expr": "0 10 * * *",
-      "tz": "Europe/Lisbon"
-    },
-    "enabled": true
-  },
-  {
-    "id": "7c7819ed-9f83-467b-a25a-5e450378a14b",
-    "name": "swimming-reminder-friday",
-    "schedule": {
-      "kind": "cron",
-      "expr": "0 9 * * 5",
       "tz": "Europe/Lisbon"
     },
     "enabled": true

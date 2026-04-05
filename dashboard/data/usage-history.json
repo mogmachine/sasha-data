@@ -472,6 +472,24 @@
         "calls": 14
       }
     },
+    "2026-04-04": {
+      "claude-haiku-4-5": {
+        "input": 45,
+        "output": 1037,
+        "cacheRead": 39445,
+        "cacheWrite": 14887,
+        "cost": 0.027783250000000002,
+        "calls": 4
+      },
+      "claude-opus-4-6": {
+        "input": 12,
+        "output": 136,
+        "cacheRead": 33530,
+        "cacheWrite": 33532,
+        "cost": 0.2298,
+        "calls": 4
+      }
+    },
     "2026-02-20": {
       "claude-opus-4-6": {
         "input": 18,
@@ -480,6 +498,16 @@
         "cacheWrite": 75439,
         "cost": 0.50524175,
         "calls": 8
+      }
+    },
+    "2026-04-05": {
+      "claude-haiku-4-5": {
+        "input": 10,
+        "output": 161,
+        "cacheRead": 0,
+        "cacheWrite": 13339,
+        "cost": 0.01748875,
+        "calls": 1
       }
     },
     "2026-04-03": {
@@ -592,18 +620,18 @@
     }
   },
   "grandTotal": {
-    "tokens": 98732,
-    "cost": 118.29903449999999
+    "tokens": 100133,
+    "cost": 118.57410649999998
   },
   "weekly": {
-    "tokens": 9693,
-    "cost": 2.1258592
+    "tokens": 9943,
+    "cost": 2.15489745
   },
   "providers": {
     "unknown": {
-      "tokens": 98732,
-      "cost": 118.29903449999999
+      "tokens": 100133,
+      "cost": 118.57410649999998
     }
   },
-  "generated": "2026-04-04T03:00:01.207558"
+  "generated": "2026-04-05T03:00:01.797346"
 }

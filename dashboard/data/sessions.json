@@ -6,16 +6,16 @@
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1775358000024
+    "updatedAt": 1775444400021
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:7caf4dac-a304-4506-bf42-f2b6e918b35d",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:0e36c193-434f-48ec-aa22-d6a2230cbe79",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1775358000024
+    "updatedAt": 1775444400021
   },
   {
     "key": "agent:main:main",
@@ -24,7 +24,7 @@
     "model": "claude-opus-4-6",
     "inputTokens": 3,
     "outputTokens": 20,
-    "updatedAt": 1775293202684
+    "updatedAt": 1775379602332
   },
   {
     "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577",
@@ -32,26 +32,26 @@
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 778,
-    "updatedAt": 1775271607298
+    "outputTokens": 416,
+    "updatedAt": 1775358006469
   },
   {
-    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:03a3fc04-17c8-474d-8f35-6b76ab678f31",
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:45867252-ded2-4b24-809d-d67d645ca582",
     "agent": "unknown",
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 778,
-    "updatedAt": 1775271607298
+    "outputTokens": 416,
+    "updatedAt": 1775358006469
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:f6408058-b0bd-4f9f-9dc0-303db77e1b58",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:7caf4dac-a304-4506-bf42-f2b6e918b35d",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 22,
-    "outputTokens": 259,
-    "updatedAt": 1775271600020
+    "outputTokens": 284,
+    "updatedAt": 1775358000024
   },
   {
     "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623",

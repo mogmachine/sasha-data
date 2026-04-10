@@ -27,3 +27,5 @@
 - [ ] Fazer cenouras marinadas 🥕
 - [ ] Registar colheita da horta 🌱
 - [ ] Limpar galinheiro 🐔
+- [ ] Encomendar máquina de fazer iogurte
+- [ ] Encomendar leites naturais de vaca e cabra

@@ -130,5 +130,17 @@
     "priority": "normal",
     "category": "Daily",
     "done": false
+  },
+  {
+    "text": "Encomendar m\u00e1quina de fazer iogurte",
+    "priority": "normal",
+    "category": "Daily",
+    "done": false
+  },
+  {
+    "text": "Encomendar leites naturais de vaca e cabra",
+    "priority": "normal",
+    "category": "Daily",
+    "done": false
   }
 ]

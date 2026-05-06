@@ -6,16 +6,16 @@
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1777950000028
+    "updatedAt": 1778036400023
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:3673940f-6076-40dc-9b5a-52bf53d7df65",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:f130aeb7-63a3-4af2-bffe-5e052911661e",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1777950000028
+    "updatedAt": 1778036400023
   },
   {
     "key": "agent:main:main",
@@ -24,25 +24,25 @@
     "model": "claude-opus-4-6",
     "inputTokens": 3,
     "outputTokens": 22,
-    "updatedAt": 1777885222496
+    "updatedAt": 1777971613478
   },
   {
     "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623",
     "agent": "unknown",
     "label": "Cron: cafe-calls-reminder",
     "model": "claude-haiku-4-5",
-    "inputTokens": 61,
-    "outputTokens": 1142,
-    "updatedAt": 1777885200018
+    "inputTokens": 24,
+    "outputTokens": 538,
+    "updatedAt": 1777971600023
   },
   {
-    "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623:run:7bcb53c4-8e7e-4e76-a5af-8dec5d298ba1",
+    "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623:run:d06c7fa2-e968-4592-959e-7ecbd9a4ef01",
     "agent": "unknown",
     "label": "Cron: cafe-calls-reminder",
     "model": "claude-haiku-4-5",
-    "inputTokens": 61,
-    "outputTokens": 1142,
-    "updatedAt": 1777885200018
+    "inputTokens": 24,
+    "outputTokens": 538,
+    "updatedAt": 1777971600023
   },
   {
     "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577",
@@ -50,25 +50,25 @@
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 483,
-    "updatedAt": 1777863619506
+    "outputTokens": 514,
+    "updatedAt": 1777950007324
   },
   {
-    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:09c2018c-e7d0-44e1-8bab-02d78a97f7f8",
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:5cbe3e91-6692-437c-8387-be73a6e8f531",
     "agent": "unknown",
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 483,
-    "updatedAt": 1777863619506
+    "outputTokens": 514,
+    "updatedAt": 1777950007324
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:ce65fc35-96d6-4f1c-a3c1-5eea0aa7483c",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:3673940f-6076-40dc-9b5a-52bf53d7df65",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
-    "inputTokens": 33,
-    "outputTokens": 435,
-    "updatedAt": 1777863600018
+    "inputTokens": 22,
+    "outputTokens": 255,
+    "updatedAt": 1777950000028
   }
 ]

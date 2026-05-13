@@ -1,22 +1,22 @@
 {
   "memory": {
     "total": 12541644800,
-    "used": 2884984832,
+    "used": 2879574016,
     "percent": 23.0
   },
   "load": {
-    "1min": 0.0,
-    "5min": 0.0,
-    "15min": 0.0
+    "1min": 0.16,
+    "5min": 0.03,
+    "15min": 0.01
   },
   "cpuCores": 6,
   "disk": {
     "total": 102888095744,
-    "used": 5663404032,
+    "used": 5665538048,
     "percent": 5.5
   },
-  "openclawSize": 13193502,
-  "sessionCount": 262,
-  "uptime": 7322222,
-  "timestamp": "2026-05-12T03:00:04.139345"
+  "openclawSize": 13246273,
+  "sessionCount": 266,
+  "uptime": 7408622,
+  "timestamp": "2026-05-13T03:00:04.353788"
 }

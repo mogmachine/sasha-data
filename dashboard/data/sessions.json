@@ -6,16 +6,16 @@
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1778986800022
+    "updatedAt": 1779073200020
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:e8854b43-66a9-44cf-8d53-fe3940b72445",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:4a486288-3546-49c0-b0a8-3b4fea49112c",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 0,
     "outputTokens": 0,
-    "updatedAt": 1778986800022
+    "updatedAt": 1779073200020
   },
   {
     "key": "agent:main:main",
@@ -23,8 +23,8 @@
     "label": "",
     "model": "claude-opus-4-6",
     "inputTokens": 3,
-    "outputTokens": 18,
-    "updatedAt": 1778922002147
+    "outputTokens": 19,
+    "updatedAt": 1779008403660
   },
   {
     "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577",
@@ -32,26 +32,26 @@
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 404,
-    "updatedAt": 1778900407168
+    "outputTokens": 435,
+    "updatedAt": 1778986809273
   },
   {
-    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:bf1ae660-caa0-467e-a834-dda6dadc9a5f",
+    "key": "agent:main:cron:9af52fbf-4bab-4c35-9c7f-da2f05f14577:run:b04adfb9-b553-4a2f-ac05-8f124fd285b9",
     "agent": "unknown",
     "label": "Cron: daily-git-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 23,
-    "outputTokens": 404,
-    "updatedAt": 1778900407168
+    "outputTokens": 435,
+    "updatedAt": 1778986809273
   },
   {
-    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:27bf73b2-126f-4fb2-b30f-ac88c4c3f216",
+    "key": "agent:main:cron:440e0a7b-4780-4081-9b1e-12643e55eb27:run:e8854b43-66a9-44cf-8d53-fe3940b72445",
     "agent": "unknown",
     "label": "Cron: daily-encrypted-backup",
     "model": "claude-haiku-4-5",
     "inputTokens": 22,
-    "outputTokens": 334,
-    "updatedAt": 1778900400022
+    "outputTokens": 237,
+    "updatedAt": 1778986800022
   },
   {
     "key": "agent:main:cron:e80ec1a2-6458-4003-a1be-4c0b351e6623",
